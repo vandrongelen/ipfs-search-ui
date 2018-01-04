@@ -1,0 +1,9 @@
+<div class="list-group">
+  <a href="" class="list-group-item" data-ng-repeat="item in items">
+    <span ng-if="item.type == 'directory'" class="glyphicons glyphicons-folder-open"></span>
+    <span ng-if="item.type == 'file'" class="glyphicons glyphicons-file"></span><h4 class="list-group-item-heading">{{item.title | ngHtmlToPlainText}}</h4>
+    <p class="list-group-item-text">
+      {{item.description | ngHtmlToPlainText}}
+    </p>
+  </a>
+</div>

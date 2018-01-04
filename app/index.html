@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="style/style.css">
+  <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no,minimum-scale=1,maximum-scale=1"> 
+  <meta name="apple-mobile-web-app-capable" content="yes"> 
+  <meta name="apple-mobile-web-app-status-bar-style" content="black"> 
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+  <link rel="icon" type="image/png" href="assets/favicon-32x32.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="assets/favicon-16x16.png" sizes="16x16">
+  <link rel="manifest" href="assets/manifest.json">
+  <link rel="mask-icon" href="assets/safari-pinned-tab.svg" color="#5bbad5">
+  <title>IPFS-Search</title>
+</head>
+<body ng-app="app" ng-controller="ngSearchController">
+
+    <div class="container search-box">
+      <div class="row">
+        <div class="col-sm-offset-3 col-sm-6">
+          <form class="form-horizontal pos" ng-submit="search()">
+            <div class="form-group form-group">
+              <input autocomplete="off" class="form-control" type="text" ng-model="querystring" id="formGroupInputLarge" placeholder="Search...">
+              <span class="input-wrapper"></span>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <div class="container identity">
+      <div class="row">
+        <div class="col-sm-offset-3 col-sm-6 col-md-offset-4 col-md-4 col-xs-offset-1 col-xs-10">
+          <img src="assets/logo-ipfs-search.svg" />
+        </div>
+      </div>
+    </div>
+
+    <div class="container search-results">
+      <div class="row">
+        <div class="col-sm-offset-1 col-sm-10 col-md-offset-2 col-md-8">
+
+          <div class="search-results-wrapper">
+
+            <nav aria-label="...">
+              <ul class="pager">
+                <li><a href="#" ng-click="decrement()">Previous</a></li>
+                <li><a href="#" ng-click="increment()">Next</a></li>
+              </ul>
+            </nav>
+            
+            <div ng-search-directive></div>
+
+            <nav aria-label="...">
+              <ul class="pager">
+                <li><a href="#" ng-click="decrement()">Previous</a></li>
+                <li><a href="#" ng-click="increment()">Next</a></li>
+              </ul>
+            </nav>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container cover"></div>
+
+    <div class="container spinner">
+      <img src="assets/three-dots.svg" height="15" width="60">
+    </div>
+
+    <div class="container notification">
+      <p>No results...</p>
+    </div>
+    
+
+  <div class="container footer">
+    <div class="row">
+      <div class="col-sm-offset-3 col-sm-6">
+        <a href="#" class="btn btn-default" role="button">Donate</a>
+        <a href="#" class="btn btn-default" role="button">BTC</a>
+        <a href="#" class="link">API</a>
+        <a href="#" class="link">Code</a>
+        <a href="#" class="link">Contact</a>
+      </div>
+    </div>
+  </div>
+  <script type="text/javascript" src="bundle.js"></script>
+</body>
+</html>
